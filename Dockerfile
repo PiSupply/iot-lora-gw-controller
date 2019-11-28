@@ -22,17 +22,11 @@ ARG moo=107
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
-RUN ls -a /etc/nginx/conf.d/
+RUN rm/etc/nginx/conf.d/default.conf
 
-RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
-
-WORKDIR /etc/nginx/sites-available
+WORKDIR /etc/nginx/conf.d
 
 COPY files/iotloragateway .
-
-RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
-
-
 
 
 EXPOSE 80 443
