@@ -13,7 +13,7 @@ RUN apk add  nginx php7-fpm  php7-json php7-curl git curl \
 
 RUN pecl install yaml-2.0.4
 
-RUN ls -a /etc/php/
+RUN ls -a /etc/
 
 RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
 
