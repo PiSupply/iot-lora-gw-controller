@@ -2,14 +2,14 @@
 #(C) Pi Supply 2019
 #Licensed under the GNU GPL V3 License.
 
-FROM arm32v5/debian:buster-slim
+FROM arm32v6/alpine:latest
 
 WORKDIR /opt/iotloragateway/controller
 
-RUN apt-get update && apt-get upgrade -y
+RUN apk update && apk upgrade -y
 
-RUN apt-get install -y nginx php7.3-fpm  php7.3-json php7.3-curl git curl \
- php7.3-zip unzip libyaml-dev php-pear php7.3-dev
+RUN apk add  nginx php7-fpm  php7-json php7-curl git curl \
+ php7-zip unzip yaml-dev php7-pear php7-dev
 
 RUN pecl install yaml-2.0.4
 
