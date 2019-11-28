@@ -22,7 +22,7 @@ ARG moo=107
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
-RUN ls -a /etc/nginx/
+RUN ls -a /etc/nginx/conf.d/
 
 RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
 
