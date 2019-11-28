@@ -6,7 +6,8 @@ FROM arm32v6/alpine:latest
 
 WORKDIR /opt/iotloragateway/controller
 
-RUN apk update && apk upgrade
+RUN apk update
+RUN apk upgrade
 
 RUN apk add  nginx php7-fpm  php7-json php7-curl git curl \
  php7-zip unzip yaml-dev php7-pear php7-dev php7-openssl build-base gcc
