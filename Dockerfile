@@ -22,10 +22,8 @@ ARG moo=107
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
-RUN rm/etc/nginx/conf.d/default.conf
-
 WORKDIR /etc/nginx/conf.d
-
+RUN rm default.conf
 COPY files/iotloragateway .
 
 
