@@ -2,7 +2,7 @@
 #(C) Pi Supply 2019
 #Licensed under the GNU GPL V3 License.
 
-FROM debian:buster-slim
+FROM debian:buster-slim:arm32v7
 
 WORKDIR /opt/iotloragateway/controller
 
