@@ -8,7 +8,8 @@ if [ ! -f "/opt/iotloragateway/ssl/iotloragateway.key" ]; then
   openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /opt/iotloragateway/ssl/iotloragateway.key -out /opt/iotloragateway/ssl/iotloragateway.crt  -subj "/C=GB/ST=Kent/L=Tunbridge Wells/O=Global Security/OU=IT Department/CN=iotloragateway"
 fi
 if [ ! -f "/opt/iotloragateway/ssl/dhparam.pem" ]; then
-  openssl dhparam -out /opt/iotloragateway/ssl/dhparam.pem 2048
+  cp /opt/iotloragateway/controller/dhparam.pem /opt/iotloragateway/ssl/dhparam.pem
+  chmod 644 /opt/iotloragateway/ssl/dhparam.pem
 fi
 
 if [ ! -f "/opt/iotloragateway/config/gateway_configuration.yml" ]; then
