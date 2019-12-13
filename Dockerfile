@@ -9,7 +9,7 @@ WORKDIR /opt/iotloragateway/controller
 RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y nginx php7.3-fpm  php7.3-json php7.3-curl git curl \
- php7.3-zip unzip libyaml-dev php-pear php7.3-dev
+ php7.3-zip unzip libyaml-dev php-pear php7.3-dev --no-install-recommends
 
 RUN pecl install yaml-2.0.4
 
@@ -38,7 +38,7 @@ RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
 EXPOSE 80 443
 
 WORKDIR /opt/iotloragateway/controller
-RUN openssl dhparam 2048 dhparam.pem 
+RUN openssl dhparam 2048 dhparam.pem
 COPY files/gateway_configuration.yml .
 COPY files/run.sh .
 
