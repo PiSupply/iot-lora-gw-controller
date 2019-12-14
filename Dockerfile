@@ -41,7 +41,7 @@ RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
 EXPOSE 80 443
 
 WORKDIR /opt/iotloragateway/controller
-RUN openssl dhparam 2048 dhparam.pem
+COPY files/dhparam.pem .
 COPY files/gateway_configuration.yml .
 COPY files/run.sh .
 
