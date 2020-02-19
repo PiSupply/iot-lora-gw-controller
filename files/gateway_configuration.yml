@@ -43,10 +43,18 @@ location:
 
 lte-modem:
   enabled: false
-  apn: 3internet
+  apn:
   number: "*99#"
   username:
   password:
+
+wifi:
+  ssid:
+  password:
+  region:
+
+systemConfig:
+  ssh: true
 
 
 ...
