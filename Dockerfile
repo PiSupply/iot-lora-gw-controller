@@ -23,6 +23,8 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 
+ARG bump=004
+
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
 RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
