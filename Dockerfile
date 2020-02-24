@@ -12,15 +12,17 @@ WORKDIR /opt/iotloragateway/controller
 RUN apt-get update && apt-get upgrade -y
 
 RUN apt-get install -y nginx php7.3-fpm  php7.3-json php7.3-curl git curl \
- php7.3-zip unzip libyaml-dev php-pear php7.3-dev
+ php7.3-zip unzip
 
-RUN pecl channel-update pecl.php.net
-RUN pecl install yaml-2.0.4
+#RUN apt-get install -y libyaml-dev php-pear php7.3-dev
 
-RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
+#RUN pecl channel-update pecl.php.net
+#RUN pecl install yaml-2.0.4
 
-RUN pecl clear-cache
-RUN apt-get remove php7.3-dev php-pear libyaml-dev -y
+#RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
+
+#RUN pecl clear-cache
+#RUN apt-get remove php7.3-dev php-pear libyaml-dev -y
 RUN apt-get clean
 
 RUN rm -rf /var/lib/apt/lists/*
