@@ -19,9 +19,18 @@ RUN pecl install yaml-2.0.4
 
 RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
 
+RUN apt-get clean
+
+RUN rm -rf /var/lib/apt/lists/*
+
+
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
+
+
+
+ARG bump2=004
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
