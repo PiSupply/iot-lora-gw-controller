@@ -30,7 +30,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 
 
-ARG newfile=005
+ARG newfile=007
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
