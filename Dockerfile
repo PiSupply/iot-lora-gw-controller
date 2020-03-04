@@ -2,12 +2,6 @@
 #(C) Pi Supply 2019
 #Licensed under the GNU GPL V3 License.
 
-<<<<<<< HEAD
-=======
-
-ARG bump=004
-
->>>>>>> 38a7b28a0242a19d0e1e2db4a177a1741aa298ac
 FROM arm32v7/debian:buster-slim
 
 WORKDIR /opt/iotloragateway/controller
@@ -33,11 +27,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 
 
-<<<<<<< HEAD
 ARG newfile=004
-=======
-ARG bump2=006
->>>>>>> 38a7b28a0242a19d0e1e2db4a177a1741aa298ac
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
@@ -48,11 +38,6 @@ WORKDIR /etc/nginx/sites-available
 COPY files/iotloragateway .
 
 RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
-
-
-
-
-
 
 EXPOSE 80 443
 
