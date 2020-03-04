@@ -16,7 +16,9 @@ RUN pecl install yaml-2.0.4
 
 RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
 
-RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear 
+RUN pecl clear-cache 
+RUN apt-get autoremove -y
+RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear
 RUN apt-get clean
 
 
