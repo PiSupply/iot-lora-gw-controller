@@ -8,7 +8,7 @@ WORKDIR /opt/iotloragateway/controller
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y --no-install-recommends nginx php7.3-fpm  git curl openssl
+RUN apt-get install -y --no-install-recommends nginx php7.3-fpm  git curl openssl ca-certificates
 
 #RUN pecl channel-update pecl.php.net
 #RUN pecl install yaml-2.0.4
