@@ -16,14 +16,15 @@ RUN pecl install yaml-2.0.4
 
 RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
 
+RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear 
 RUN apt-get clean
+
 
 RUN rm -rf /var/lib/apt/lists/*
 
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
-
 
 
 
