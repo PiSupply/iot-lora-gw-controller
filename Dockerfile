@@ -6,23 +6,22 @@ FROM debian:buster-slim
 
 WORKDIR /opt/iotloragateway/controller
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update && \
+apt-get upgrade -y && \
+apt-get install -y --no-install-recommends nginx php7.3-fpm  php7.3-json \
+php7.3-curl git curl php7.3-zip unzip libyaml-dev php-pear php7.3-dev \
+libyaml-0-2 ca-certificates openssl build-essential && \
+rm -rf /var/lib/apt/lists/* && \
+apt-get clean
 
-RUN apt-get install -y --no-install-recommends nginx php7.3-fpm  php7.3-json php7.3-curl git curl \
- php7.3-zip unzip libyaml-dev php-pear php7.3-dev libyaml-0-2 ca-certificates openssl build-essential && rm -rf /var/lib/apt/lists/*
+RUN pecl channel-update pecl.php.net && pecl install yaml-2.0.4 && \
+echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini && \
+pecl clear-cache
 
-RUN pecl channel-update pecl.php.net
-RUN pecl install yaml-2.0.4
-
-RUN echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini
-
-RUN pecl clear-cache
-RUN apt-get autoremove -y
-RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear
+#RUN apt-get autoremove -y
+#RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear
 
 
-
-RUN rm -rf /var/lib/apt/lists/*
 
 
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
