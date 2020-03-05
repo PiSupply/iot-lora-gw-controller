@@ -8,7 +8,7 @@ WORKDIR /opt/iotloragateway/controller
 
 RUN apt-get update && \
 apt-get upgrade -y && \
-apt-get install -y --no-install-recommends nginx php7.3-fpm  php7.3-json \
+apt-get install -y --no-install-recommends lighttpd php7.3-fpm  php7.3-json \
 php7.3-curl git curl php7.3-zip unzip libyaml-dev php-pear php7.3-dev \
 libyaml-0-2 ca-certificates openssl build-essential && \
 rm -rf /var/lib/apt/lists/* && \
@@ -24,8 +24,8 @@ pecl clear-cache
 
 
 
-RUN ln -sf /dev/stdout /var/log/nginx/access.log \
-	&& ln -sf /dev/stderr /var/log/nginx/error.log
+#RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+#	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 
 
@@ -33,13 +33,13 @@ ARG newfile=007
 
 RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
-RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
+#RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
 
-WORKDIR /etc/nginx/sites-available
+#WORKDIR /etc/nginx/sites-available
 
-COPY files/iotloragateway .
+#COPY files/iotloragateway .
 
-RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
+#RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
 
 EXPOSE 80 443
 
