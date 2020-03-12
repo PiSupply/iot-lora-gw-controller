@@ -14,9 +14,9 @@ libyaml-0-2 ca-certificates openssl build-essential && \
 rm -rf /var/lib/apt/lists/* && \
 apt-get clean
 
-RUN pecl channel-update pecl.php.net && pecl install yaml-2.0.4 && \
-echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini && \
-pecl clear-cache
+#RUN pecl channel-update pecl.php.net && pecl install yaml-2.0.4 && \
+#echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini && \
+#pecl clear-cache
 
 #RUN apt-get autoremove -y
 #RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear
