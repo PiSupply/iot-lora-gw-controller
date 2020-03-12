@@ -9,7 +9,7 @@ WORKDIR /opt/iotloragateway/controller
 RUN apt-get update && \
 apt-get upgrade -y && \
 apt-get install -y --no-install-recommends nginx php7.3-fpm  php7.3-json \
-php7.3-curl curl php7.3-zip unzip libyaml-dev php-pear php7.3-dev \
+php7.3-curl curl php7.3-zip unzip \
 libyaml-0-2 ca-certificates openssl build-essential && \
 rm -rf /var/lib/apt/lists/* && \
 apt-get clean
