@@ -25,18 +25,8 @@ apt-get autoremove -y && \
 rm -rf /var/lib/apt/lists/* && \
 apt-get clean
 
-#RUN pecl channel-update pecl.php.net && pecl install yaml-2.0.4 && \
-#echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini && \
-#pecl clear-cache
-
-#RUN apt-get autoremove -y
-#RUN apt-get remove -y build-essential libyaml-dev php7.3-dev php-pear
-
-
-
-
-#RUN ln -sf /dev/stdout /var/log/nginx/access.log \
-#	&& ln -sf /dev/stderr /var/log/nginx/error.log
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 
 
@@ -44,13 +34,13 @@ ARG newfile=007
 
 #RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
 
-#RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
+RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
 
-#WORKDIR /etc/nginx/sites-available
+WORKDIR /etc/nginx/sites-available
 
-#COPY files/iotloragateway .
+COPY files/iotloragateway .
 
-#RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/iotloragateway /etc/nginx/sites-enabled/
 
 EXPOSE 80 443
 
