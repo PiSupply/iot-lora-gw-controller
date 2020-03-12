@@ -9,7 +9,7 @@ WORKDIR /opt/iotloragateway/controller
 RUN apt-get update && \
 apt-get upgrade -y && \
 apt-get install -y --no-install-recommends lighttpd php7.3-fpm  php7.3-json \
-php7.3-curl curl php7.3-zip unzip \ ca-certificates && \
+php7.3-curl curl php7.3-zip unzip ca-certificates && \
 rm -rf /var/lib/apt/lists/* && \
 apt-get clean
 
