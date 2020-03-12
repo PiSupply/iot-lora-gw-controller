@@ -29,10 +29,9 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 
-
-ARG newfile=007
-
-#RUN git clone -b yamlConversion --single-branch https://github.com/PiSupply/iot-lora-controller.git
+RUN wget https://github.com/PiSupply/iot-lora-controller/archive/master.zip
+RUN unzip master.zip
+RUN ls -a
 
 RUN rm /etc/nginx/sites-enabled/default & rm /etc/nginx/sites-available/default
 
