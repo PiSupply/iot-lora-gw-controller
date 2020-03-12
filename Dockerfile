@@ -11,6 +11,7 @@ apt-get upgrade -y && \
 apt-get install -y --no-install-recommends nginx-light php7.3-fpm  php7.3-json \
 php7.3-curl curl php7.3-zip unzip \
 libyaml-0-2 ca-certificates && \
+apt-get autoremove -y && \
 rm -rf /var/lib/apt/lists/* && \
 apt-get clean
 
@@ -20,7 +21,7 @@ pecl channel-update pecl.php.net && pecl install yaml-2.0.4 && \
 echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini && \
 pecl clear-cache && \
 apt-get remove -y --no-install-recommends build-essential php7.3-dev php-pear libyaml-dev && \
-apt-get autoremove && \
+apt-get autoremove -y && \
 rm -rf /var/lib/apt/lists/* && \
 apt-get clean
 
