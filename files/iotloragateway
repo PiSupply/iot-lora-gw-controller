@@ -23,7 +23,7 @@ ssl_stapling on;
 ssl_stapling_verify on;
 ssl_dhparam /opt/iotloragateway/ssl/dhparam.pem;
 
-	root /opt/iotloragateway/controller/iot-lora-controller-master/;
+	root /opt/iotloragateway/controller/iot-lora-controller/;
 
 	# Add index.php to the list if you are using PHP
 	index index.php;
