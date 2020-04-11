@@ -24,7 +24,7 @@ chown www-data:www-data /opt/iotloragateway/config/gateway_configuration.yml
 chmod 755 /opt/iotloragateway/config/gateway_configuration.yml
 
 cd  /opt/iotloragateway/controller
-git pull
+#git pull
 
 
 service php7.3-fpm start
