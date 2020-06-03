@@ -16,7 +16,7 @@ rm -rf /var/lib/apt/lists/* && \
 apt-get clean
 
 RUN apt-get update && \
-apt-get install -y --no-install-recommends build-essential php7.3-dev php-pear libyaml-dev && \
+apt-get install -y --no-install-recommends sudo build-essential php7.3-dev php-pear libyaml-dev && \
 pecl channel-update pecl.php.net && pecl install yaml-2.0.4 && \
 echo "extension=yaml.so" > /etc/php/7.3/fpm/conf.d/20-yaml.ini && \
 pecl clear-cache && \
