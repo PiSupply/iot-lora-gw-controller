@@ -43,10 +43,10 @@ location:
 
 lte-modem:
   enabled: false
-  apn:
+  apn: ""
   number: "*99#"
-  username:
-  password:
+  username: ""
+  password: ""
 
 wifi:
   ssid:
