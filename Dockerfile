@@ -28,7 +28,7 @@ apt-get clean
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
-ARG moo=300620201639
+ARG moo=300620201645
 
 RUN wget https://github.com/PiSupply/iot-lora-controller/archive/yamlConversion.zip && unzip yamlConversion.zip && \
 rm yamlConversion.zip && mv iot-lora-controller-yamlConversion iot-lora-controller
