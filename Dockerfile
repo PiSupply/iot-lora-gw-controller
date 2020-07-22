@@ -6,7 +6,7 @@ FROM debian:buster-slim
 
 WORKDIR /opt/iotloragateway/controller
 
-RUN echo 'Acquire::http { Proxy "http://192.168.0.8:3142"; }' | sudo tee -a /etc/apt/apt.conf.d/proxy &&\\
+RUN echo 'Acquire::http { Proxy "http://192.168.0.8:3142"; }' | sudo tee -a /etc/apt/apt.conf.d/proxy &&\
 apt-get update && \
 apt-get upgrade -y && \
 apt-get install -y --no-install-recommends nginx-light php7.3-fpm  php7.3-json \
